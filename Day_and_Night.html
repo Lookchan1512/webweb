@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LOOKCHAN</title>
+
+        <style>
+            body {
+                background-image: url('background.png');
+                background-color: rgb(232, 238, 236);
+                font-family: Garamond, serif;
+            }
+            h1 {
+                color: #000000;
+            }
+            img {
+                margin: 20px;
+                transition: transform 0.2s; /* Smooth transition*/
+            }
+            .bookimg{
+                width :250px;
+                height :250px;
+                margin-left: 10%;
+                margin-right: auto;
+                margin-top: 5%;
+            }
+            welcome {
+                text-align: center;
+            }
+            .mode{
+                width: 10%;
+                height: 10%;
+                margin-left: 90%;
+                margin-right: 1;
+                margin-bottom: 1%;
+                margin-top: 2%;
+            }
+        </style>
+    </head>
+    <body>
+        <welcome><h1 style="border-style: double; background-color: rgb(218, 170, 38);">Hello, welcome to my BOOKSHELF</h1></welcome>
+        <a href="ABOUTME.html"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="aboutme.png" alt="about me" class="bookimg" id="abtme"></a>
+        <middle></middle><a href="HOBBIES.html"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="hobbies.png" alt="hobbies" class="bookimg" id="hobb" ></a></middle>
+        <img onmousedown="notAllowRightClick(event)" onmouseover="bigImg(this)" onmouseout="normalImg(this)"  src="random.png" alt="random" class="bookimg" id="rand" >
+        <br><br><br><br><br><br>
+        <img onmousedown="change()" src="sun.png" alt="mode" class="mode" id="mode">
+
+    <script>
+        function bigImg(x) {
+            x.style.height = "280px";
+            x.style.width = "280px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "250px";
+            x.style.width = "250px";
+        }
+
+        function change(){
+            var img = document.getElementById("mode");
+            if(img.src.match("sun.png")){
+                img.src = "moon.png";
+                document.body.style.backgroundColor = "rgb(0, 0, 0)";
+            } else {
+                img.src = "sun.png";
+                document.body.style.backgroundColor = "rgb(232, 238, 236)";
+            }
+        }
+
+        function notAllowRightClick(event) {
+            event.preventDefault();
+            alert("notting here ToT");
+        }
+    </script>
+
+    </body>
+</html>
